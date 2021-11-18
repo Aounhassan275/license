@@ -28,6 +28,9 @@ class UserSeeder extends Seeder
             'password' => Hash::make('1234'),
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now()],
+        ]);   
+        DB::table('settings')->insert([
+            [ 'download_button' => '1'],
         ]);
 
     }

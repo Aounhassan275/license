@@ -38,6 +38,38 @@
 @if($license != null)
 <div class="section-empty">
     <div class="container content">
+        <div class="row vertical-row">
+            <div class="col-md-6">
+                <h4>User Information </h4>
+                <hr class="space xs" />
+                <ul class="list-texts">
+                    <li><b>Name :</b>   {{$license->name}}</li>
+                    <li><b>Cnic :</b>   {{$license->cnic}}</li>
+                    <li><b>Father / Husband Name :</b>   {{$license->father_name}} </li>
+                    <li><b>City :</b> {{$license->city}}</li>
+                </ul>
+            </div>
+        </div>
+        <div class="row vertical-row">
+            <div class="col-md-6">
+                <h4>License Information </h4>
+                <hr class="space xs" />
+                <ul class="list-texts">
+                    <li><b>Issue Date :</b>   {{$license->issue_date}}</li>
+                    <li><b>Valid From :</b>   {{$license->cnic}}</li>
+                    <li><b>Valid To :</b>   {{$license->valid_to}} </li>
+                    <li><b>Allowed Vehicle :</b> {{$license->allowed_vehicles}}</li>
+                    <li><b>Status :</b> {{$license->status}}</li>
+                    @if(@$setting->download_button)
+                    <li><button type="button" class="btn btn-sm" id="pin_modals"> Download License</button></li>
+                    @endif
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+{{-- <div class="section-empty">
+    <div class="container content">
         <div class="row">
             <div class="col-md-12">
                 <div class="list-group pricing-table">
@@ -78,7 +110,7 @@
         </div>
         <hr class="space" />
     </div>
-</div>
+</div> --}}
 <div id="pin_modal" class="modal fade">
     <div class="modal-dialog">
         <form method="get">

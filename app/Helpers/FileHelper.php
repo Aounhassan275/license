@@ -18,5 +18,11 @@ class FileHelper
              $file->move($Path, $filename);
              return $path.$filename;
     } 
+    public static function saveFile($file,$path){
+     $filename = $file->getClientOriginalName();
+     $Path = public_path().$path;
+     $file->move($Path, $filename);
+      return $path.$filename;
+} 
     
 }

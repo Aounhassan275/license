@@ -78,6 +78,11 @@
 							<i class="align-middle" data-feather="check-square"></i> <span class="align-middle">Email</span>
 						</a>
 					</li>
+					<li class="sidebar-item {{Request::is('admin.setting.index')?'active':''}}">
+						<a class="sidebar-link" href="{{route('admin.setting.index')}}">
+							<i class="align-middle" data-feather="check-square"></i> <span class="align-middle">Site Setting</span>
+						</a>
+					</li>
 					<li class="sidebar-item {{Request::is('admin.profile.index')?'active':''}}">
 						<a class="sidebar-link" href="{{route('admin.profile.index')}}">
 							<i class="align-middle" data-feather="check-square"></i> <span class="align-middle">Profile</span>

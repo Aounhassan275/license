@@ -32,6 +32,8 @@ Route::group(['prefix' => 'admin', 'as'=>'admin.','namespace' => 'Admin'], funct
       Route::resource('license', 'LicenseController');
     /******************FORM ROUTES****************/
       Route::resource('form', 'FormController');  
+    /******************SETTING ROUTES****************/
+      Route::resource('setting', 'SettingController');  
            /******************MESSAGE ROUTES****************/
      Route::resource('message', 'MessageController');  
           /******************Email ROUTES****************/

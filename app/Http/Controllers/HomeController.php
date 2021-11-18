@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Form;
 use App\Models\License;
 use App\Models\Message;
+use App\Models\Setting;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Response;
 
@@ -19,6 +20,7 @@ class HomeController extends Controller
     public function verifyLicense(Request $request)
     {
         // dd(1);
+        $setting = Setting::find(1);
         if($request->cnic)
         {
             $license = License::where('cnic',$request->cnic)->first();
@@ -27,7 +29,7 @@ class HomeController extends Controller
                 toastr()->error('No License Found against This CNIC!');
                 return back();
             }
-            return view('front.verify_license.index',compact('license'));
+            return view('front.verify_license.index',compact('license','setting'));
         }elseif($request->pin)
         {
             $license = License::where('pin',$request->pin)->first();
@@ -48,20 +50,20 @@ class HomeController extends Controller
         }
         else{
             $license = null;
-            return view('front.verify_license.index',compact('license'));
+            return view('front.verify_license.index',compact('license','setting'));
         }
         
     }
     public function DownloadForm($id)
     {
         $form = Form::find($id);
-        $file= public_path(). $form->image;
+        $file= public_path().'\form/'.$form->file_name;
         $headers = array(
         
-                    'Content-Type: application/jpeg',
+                    'Content-Type: application/pdf',
         
                     );
-        $name = $form->name.'.jpeg';
+        $name = $form->name.'.pdf';
         return Response::download($file, $name, $headers);
         
     }

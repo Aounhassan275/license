@@ -2,12 +2,11 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Helpers\FileHelper;
 use App\Http\Controllers\Controller;
-use App\Models\Form;
+use App\Models\Setting;
 use Illuminate\Http\Request;
 
-class FormController extends Controller
+class SettingController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,7 +15,8 @@ class FormController extends Controller
      */
     public function index()
     {
-        return view('admin.form.index');
+        $setting = Setting::find(1);
+        return view('admin.setting.index',compact('setting'));
     }
 
     /**
@@ -37,21 +37,16 @@ class FormController extends Controller
      */
     public function store(Request $request)
     {
-        $form = Form::create([
-            'file_name' => $request->image->getClientOriginalName()
-        ]+ $request->all());
-        FileHelper::saveFile($request->image,'\form');
-        toastr()->success('Form is Created Successfully');
-        return redirect()->back();
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Form  $form
+     * @param  \App\Models\Setting  $setting
      * @return \Illuminate\Http\Response
      */
-    public function show(Form $form)
+    public function show(Setting $setting)
     {
         //
     }
@@ -59,44 +54,37 @@ class FormController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Form  $form
+     * @param  \App\Models\Setting  $setting
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Setting $setting)
     {
-        $form = Form::find($id);
-        return view('admin.form.edit',compact('form'));
+        //
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Form  $form
+     * @param  \App\Models\Setting  $setting
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request,  $id)
     {
-        $form = Form::find($id);
-        $form->update([
-            'file_name' => $request->image->getClientOriginalName()
-        ]+ $request->all());
-        FileHelper::saveFile($request->image,'\form');
-        toastr()->success('Form Informations Updated successfully');
+        $setting = Setting::find($id);
+        $setting->update($request->all());
+        toastr()->success('Informations Updated successfully');
         return redirect()->back();
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Form  $form
+     * @param  \App\Models\Setting  $setting
      * @return \Illuminate\Http\Response
      */
-    public function destroy( $id)
+    public function destroy(Setting $setting)
     {
-        $form = Form::find($id);
-        $form->delete();
-        toastr()->success('From Deleted successfully');
-        return redirect()->route('admin.form.index');
+        //
     }
 }
