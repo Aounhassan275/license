@@ -79,6 +79,36 @@
                              <input type="file"  class="form-control" name="image">
                          </div>
                     </div>
+                    <div class="row">
+                        <div class="form-group col-6">
+                            <label class="form-label">Address</label>
+                            <input type="text" class="form-control" name="address"  placeholder="Address"  value="{{$license->address}}">
+                        </div>
+                        <div class="form-group col-6">
+                            <label class="form-label">Height</label>
+                            <input type="text"  class="form-control" name="height" placeholder="Height" value="{{$license->height}}">
+                        </div>
+                   </div>
+                   <div class="row">
+                        <div class="form-group col-6">
+                            <label class="form-label">Blood Group</label>
+                            <input type="text" class="form-control" name="blood_group"  placeholder="Blood Group" value="{{$license->blood_group}}">
+                        </div>
+                        <div class="form-group col-6">
+                            <label class="form-label">Passport</label>
+                            <input type="text"  class="form-control" name="passport" placeholder="Passport" value="{{$license->passport}}">
+                        </div>
+                   </div>
+                   <div class="row">
+                        <div class="form-group col-6">
+                            <label class="form-label">D.O.B</label>
+                            <input type="text" class="form-control" name="dob"  placeholder="DOB" value="{{$license->dob}}">
+                        </div>
+                        <div class="form-group col-6">
+                            <label class="form-label">Mobile</label>
+                            <input type="text"  class="form-control" name="mobile" placeholder="Mobile" value="{{$license->mobile}}">
+                        </div>
+                   </div>
                     <div class="text-right">
                         <button type="submit" class="btn btn-primary">Update</button>
                     </div>

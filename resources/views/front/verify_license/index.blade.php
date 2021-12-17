@@ -56,7 +56,7 @@
                 <hr class="space xs" />
                 <ul class="list-texts">
                     <li><b>Issue Date :</b>   {{$license->issue_date}}</li>
-                    <li><b>Valid From :</b>   {{$license->cnic}}</li>
+                    <li><b>Valid From :</b>   {{$license->valid_from}}</li>
                     <li><b>Valid To :</b>   {{$license->valid_to}} </li>
                     <li><b>Allowed Vehicle :</b> {{$license->allowed_vehicles}}</li>
                     <li><b>Status :</b> {{$license->status}}</li>

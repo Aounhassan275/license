@@ -27,6 +27,12 @@ class CreateLicensesTable extends Migration
             $table->string('status')->nullable();
             $table->string('pin')->nullable();
             $table->string('image')->nullable();
+            $table->string('address')->nullable();
+            $table->string('height')->nullable();
+            $table->string('blood_group')->nullable();
+            $table->string('passport')->nullable();
+            $table->string('dob')->nullable();
+            $table->string('mobile')->nullable();
             $table->timestamps();
         });
     }
