@@ -55,6 +55,7 @@
                 <h4>License Information </h4>
                 <hr class="space xs" />
                 <ul class="list-texts">
+                    <li><b>License Number :</b>   {{$license->license_number}}</li>
                     <li><b>Issue Date :</b>   {{$license->issue_date}}</li>
                     <li><b>Valid From :</b>   {{$license->valid_from}}</li>
                     <li><b>Valid To :</b>   {{$license->valid_to}} </li>
@@ -68,49 +69,6 @@
         </div>
     </div>
 </div>
-{{-- <div class="section-empty">
-    <div class="container content">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="list-group pricing-table">
-                    <div class="list-group-item pricing-price">
-                        {{$license->name}} 
-                    </div>
-                    <div class="list-group-item pricing-name">
-                        <h3>
-                            {{$license->cnic}} 
-                        </h3>
-                    </div>
-                    <div class="list-group-item">
-                        Father Name : {{$license->father_name}} 
-                    </div>
-                    <div class="list-group-item">
-                        City : {{$license->city}}
-                    </div>
-                    <div class="list-group-item">
-                        Issue Date : {{$license->issue_date}}
-                    </div>
-                    <div class="list-group-item">
-                        Valid From : {{$license->valid_from}}
-                    </div>
-                    <div class="list-group-item">
-                        Valid To : {{$license->valid_to}}
-                    </div>
-                    <div class="list-group-item">
-                        Allowed Vehicle : {{$license->allowed_vehicles}}
-                    </div>
-                    <div class="list-group-item">
-                        Status : {{$license->status}}
-                    </div>
-                    <div class="list-group-item">
-                        <button type="button" class="btn btn-sm" id="pin_modals"> Download License</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <hr class="space" />
-    </div>
-</div> --}}
 <div id="pin_modal" class="modal fade">
     <div class="modal-dialog">
         <form method="get">
