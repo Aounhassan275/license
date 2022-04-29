@@ -38,6 +38,11 @@
 @if($license != null)
 <div class="section-empty">
     <div class="container content">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <img height="200" width="200" src="{{asset($license->image)}}" >
+            </div>
+        </div>
         <div class="row vertical-row">
             <div class="col-md-6">
                 <h4>User Information </h4>
@@ -67,6 +72,26 @@
                 </ul>
             </div>
         </div>
+        @if($license->international_license_number)
+        <div class="row vertical-row">
+            <div class="col-md-6">
+                <h4>International License Information</h4>
+                <hr class="space xs" />
+                <ul class="list-texts">
+                    <li><b>International License Number :</b>   {{$license->international_license_number}}</li>
+                    <li><b>International Issue Date :</b>   {{$license->international_issue_date}}</li>
+                    <li><b>International Valid From :</b>   {{$license->international_valid_from}}</li>
+                    <li><b>International Valid To :</b>   {{$license->international_valid_to}} </li>
+                    <li><b>International Allowed Vehicle :</b> {{$license->allowed_vehicles}}</li>
+                    <li><b>International Status :</b> {{$license->status}}</li>
+                  
+                    @if(@$setting->download_button)
+                    <li><button type="button" class="btn btn-sm" id="pin_modals"> Download License</button></li>
+                    @endif
+                </ul>
+            </div>
+        </div>
+        @endif
     </div>
 </div>
 <div id="pin_modal" class="modal fade">

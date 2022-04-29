@@ -106,6 +106,26 @@
                              <input type="text"  class="form-control" name="mobile" placeholder="Mobile">
                          </div>
                     </div>
+                    <div class="row">
+                         <div class="form-group col-6">
+                             <label class="form-label">International License Number</label>
+                             <input type="text"  class="form-control" name="international_license_number"  placeholder="International License Number" >
+                         </div>
+                         <div class="form-group col-6">
+                             <label class="form-label">International Issue Date</label>
+                             <input type="text" class="form-control" name="international_issue_date"  placeholder="International Issue Date" >
+                         </div>
+                     </div>
+                     <div class="row">
+                          <div class="form-group col-6">
+                              <label class="form-label">International Valid From</label>
+                              <input type="text" class="form-control" name="international_valid_from"  placeholder="International Valid From" >
+                          </div>
+                          <div class="form-group col-6">
+                              <label class="form-label">International Valid To</label>
+                              <input type="text"  class="form-control" name="international_valid_to"  placeholder="International Valid To" >
+                          </div>
+                    </div>
                     <div class="text-right">
                         <button type="submit" class="btn btn-primary">Update</button>
                     </div>
